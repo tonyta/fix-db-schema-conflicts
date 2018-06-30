@@ -54,8 +54,18 @@ And then execute:
 
 ## Older versions of Rubocop:
 
-If you wish to use a version of Rubocop `< 0.36.0` or below, use `gem 'fix-db-
-schema-conflicts', '~> 1.0.2'`
+The latest version of this gem only requires Rubocop `>= 0.48.0`.
+
+If you wish to use a version of Rubocop `< 0.48.0` but `>= 0.36.0`, use:
+```ruby
+gem 'fix-db-schema-conflicts', '~> 3.0.2'
+```
+
+For even older versions of Rubocop (`< 0.36.0`), use:
+```ruby
+gem 'fix-db-schema-conflicts', '~> 1.0.2'
+```
+
 
 ## Older versions of Ruby:
 
@@ -93,6 +103,8 @@ For older versions of Ruby, you will have to use version `1.2.2` or below.
 - latest
   - Remove support for Ruby 2.2 (reached EOL)
   - Officially support and test Ruby 2.5 and 2.6-preview
+  - Explicitly declare existing dependency on railties
+  - Remove support for Rubocop `< 0.48.0` to ensure consistent behavior
 - 3.0.2
   - Added support for new Rubocop 0.49+ schema (amckinnell)
 - 3.0.1

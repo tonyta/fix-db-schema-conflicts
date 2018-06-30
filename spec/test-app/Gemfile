@@ -6,3 +6,4 @@ gem 'rails', '4.2.5.2'
 gem 'sqlite3'
 
 gem 'fix-db-schema-conflicts', path: '../..'
+gem 'rubocop', '0.48.0'

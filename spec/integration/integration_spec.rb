@@ -5,8 +5,15 @@ RSpec.describe 'Fix DB Schema Conflicts' do
   let(:expected_lines) { reference_db_schema.lines }
 
   it 'generates a sorted schema with no extra spacing' do
+    test_app_dir = Pathname.new(__dir__).join('../test-app')
 
-    `cd spec/test-app && rm -f db/schema.rb && rake db:migrate`
+    FileUtils.rm_f(test_app_dir.join('db/schema.rb'))
+    FileUtils.cd(test_app_dir) do
+      env = { 'BUNDLE_GEMFILE' => test_app_dir.join('Gemfile').to_s }
+      Kernel.system(env, 'bundle install', out: File::NULL)
+      Kernel.system(env, 'bundle update fix-db-schema-conflicts', out: File::NULL)
+      Kernel.system(env, 'bundle exec rake db:migrate', out: File::NULL)
+    end
 
     generated_lines = File.readlines('spec/test-app/db/schema.rb')
 
