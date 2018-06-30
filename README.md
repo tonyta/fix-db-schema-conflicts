@@ -52,6 +52,19 @@ And then execute:
 
     $ bundle
 
+## Skipping Schema Fix
+
+You may want to run `rake db:migrate` or `rake db:schema:dump` without modifying
+the original `db/schema.rb` from time to time. You can do so by setting the
+`DISABLE_SCHEMA_FIX` environment variable.
+```bash
+DISABLE_SCHEMA_FIX=true rake db:schema:dump
+```
+
+You can also selectively disable the sorting or auto-correction by setting the following environment variables:
+- `DISABLE_SCHEMA_SORT`
+- `DISABLE_SCHEMA_AUTOCORRECT`
+
 ## Older versions of Rubocop:
 
 The latest version of this gem only requires Rubocop `>= 0.48.0`.
@@ -65,7 +78,6 @@ For even older versions of Rubocop (`< 0.36.0`), use:
 ```ruby
 gem 'fix-db-schema-conflicts', '~> 1.0.2'
 ```
-
 
 ## Older versions of Ruby:
 

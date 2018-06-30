@@ -41,4 +41,6 @@ module FixDBSchemaConflicts
   end
 end
 
-ActiveRecord::SchemaDumper.send(:prepend, FixDBSchemaConflicts::SchemaDumper)
+unless ENV["DISABLE_SCHEMA_FIX"] || ENV['DISABLE_SCHEMA_SORT']
+  ActiveRecord::SchemaDumper.send(:prepend, FixDBSchemaConflicts::SchemaDumper)
+end
