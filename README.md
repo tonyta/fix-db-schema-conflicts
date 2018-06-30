@@ -103,6 +103,7 @@ For older versions of Ruby, you will have to use version `1.2.2` or below.
 - latest
   - Remove support for Ruby 2.2 (reached EOL)
   - Officially support and test Ruby 2.5 and 2.6-preview
+  - Officially support and test Rails 4.1, 4.2, 5.0, 5.1, and 5.2
   - Explicitly declare existing dependency on railties
   - Remove support for Rubocop `< 0.48.0` to ensure consistent behavior
 - 3.0.2

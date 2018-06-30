@@ -13,3 +13,7 @@
 *.a
 mkmf.log
 *.gem
+.ruby-version
+spec/test-apps/*/log/
+spec/test-apps/*/tmp/
+spec/test-apps/*/db/schema.rb

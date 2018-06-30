@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'rails', '~> 5.1.6'
+gem 'sqlite3'
+
+unless ENV['SKIP_SCHEMA_FIX']
+  gem 'fix-db-schema-conflicts', path: '../../..'
+  gem 'rubocop', '0.48.0'
+end
