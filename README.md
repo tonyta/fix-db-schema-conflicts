@@ -36,9 +36,9 @@ auto-correct flag to ensure a consistent output format.
 
 ## Usage
 
-You don't have to do anything different. It should just work. Simply run `rake
-db:migrate` or `rake db:schema:dump` as you would before and `fix-db-schema-
-conflicts` will do the rest.
+You don't have to do anything different. It should just work. Simply run
+`rake db:migrate` or `rake db:schema:dump` as you would before and
+`fix-db-schema-conflicts` will do the rest.
 
 ## Installation
 
@@ -59,8 +59,14 @@ schema-conflicts', '~> 1.0.2'`
 
 ## Older versions of Ruby:
 
-This gem only works with Ruby >= 2.2. Use versions 1.2.2 or below if you have an
-old Ruby.
+The latest version of this gem only requires Ruby 2.3 and above.
+
+For Ruby 2.2, use:
+```ruby
+gem 'fix-db-schema-conflicts', '~> 3.0.2'
+```
+
+For older versions of Ruby, you will have to use version `1.2.2` or below.
 
 ## Contributing
 
@@ -72,17 +78,21 @@ old Ruby.
 
 ## Contributors
 
- - [@jakeonrails](https://github.com/jakeonrails) - Creator and maintainer
- - [@TCampaigne](https://github.com/TCampaigne)
- - [@Lordnibbler](https://github.com/Lordnibbler)
- - [@timdiggins](https://github.com/timdiggins)
- - [@zoras](https://github.com/zoras)
- - [@jensljungblad](https://github.com/jensljungblad)
- - [@vsubramanian](https://github.com/vsubramanian)
- - [@claytron](https://github.com/claytron)
- - [@amckinnell](https://github.com/amckinnell)
+- [@jakeonrails](https://github.com/jakeonrails) - Creator and maintainer
+- [@TCampaigne](https://github.com/TCampaigne)
+- [@Lordnibbler](https://github.com/Lordnibbler)
+- [@timdiggins](https://github.com/timdiggins)
+- [@zoras](https://github.com/zoras)
+- [@jensljungblad](https://github.com/jensljungblad)
+- [@vsubramanian](https://github.com/vsubramanian)
+- [@claytron](https://github.com/claytron)
+- [@amckinnell](https://github.com/amckinnell)
+- [@tonyta](https://github.com/tonyta)
 
 ## Releases
+- latest
+  - Remove support for Ruby 2.2 (reached EOL)
+  - Officially support and test Ruby 2.5 and 2.6-preview
 - 3.0.2
   - Added support for new Rubocop 0.49+ schema (amckinnell)
 - 3.0.1
@@ -95,7 +105,7 @@ old Ruby.
 - 2.0.0
   - Allow usage of Rubocop >= 0.38.0
   - Remove Rails 5 deprecation warnings for using alias_method_chain
-   - This upgrade breaks compatibility with Ruby 1.9x since 1.9x lacks #prepend
+  - This upgrade breaks compatibility with Ruby 1.9x since 1.9x lacks #prepend
 - 1.2.2
   - Remove dependency on sed
 - 1.2.1
